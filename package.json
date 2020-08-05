@@ -10,6 +10,55 @@
     "lint": "eslint --ext .jsx,.js,.ts ./ --fix",
     "lint-prepush": "eslint --ext .jsx,.js,.ts ./"
   },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true,
+      "es6": true,
+      "jest": true
+    },
+    "rules": {
+      "no-console": "warn",
+      "no-debugger": "error",
+      "no-unused-vars": 0,
+      "import/no-duplicates": 0,
+      "no-var": "error",
+      "object-curly-spacing": "error",
+      "import/no-default-export": "error",
+      "@typescript-eslint/no-unused-vars": 0,
+      "@typescript-eslint/explicit-member-accessibility": 0,
+      "@typescript-eslint/explicit-function-return-type": 0,
+      "@typescript-eslint/no-parameter-properties": 0,
+      "@typescript-eslint/interface-name-prefix": 0
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings"
+    ],
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".ts"
+          ]
+        }
+      }
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "legacyDecorators": true
+      }
+    }
+  },
   "jest": {
     "preset": "jest-preset-angular",
     "setupFilesAfterEnv": [
