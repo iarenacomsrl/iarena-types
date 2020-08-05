@@ -2,7 +2,7 @@
   "name": "iarena-types",
   "license": "MIT",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.0",
   "main": "tsconfig.json",
   "scripts": {
     "unit:tests": "jest --testPathPattern=spec\\.ts",
@@ -75,7 +75,7 @@
     "@angular/compiler": "^8.2.14",
     "@angular/core": "^8.2.14",
     "@angular/platform-browser": "^8.2.14",
-    "@angular/platform-browser-dynamic": "^8.2.14",
+    "@angular/platform-browser-dynamic": "^8.2.14"
   },
   "devDependencies": {
     "@types/jest": "^25.1.2",
