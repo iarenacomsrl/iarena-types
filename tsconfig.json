@@ -1,20 +1,32 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "target": "es2017",
     "lib": [
-      "es6"
+      "es2017",
+      "esnext.asynciterable"
     ],
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "baseUrl": "./",
     "typeRoots": [
-      "./"
+      "./node_modules/@types"
     ],
-    "types": [],
-    "noEmit": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "alwaysStrict": true,
+    "noImplicitReturns": true,
+    "strict": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "skipLibCheck": false,
+    "strictNullChecks": true,
+    "noUnusedLocals": false,
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "pretty": true,
+    "sourceMap": true,
+    "outDir": "./dist"
   },
   "include": [
     "./e2e/**/*",
