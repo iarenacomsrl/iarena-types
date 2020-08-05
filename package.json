@@ -10,6 +10,9 @@
     "lint": "eslint --ext .jsx,.js,.ts ./ --fix",
     "lint-prepush": "eslint --ext .jsx,.js,.ts ./"
   },
+  "engines": {
+    "node": ">=7.8.0"
+  },
   "eslintConfig": {
     "root": true,
     "env": {
