@@ -1,27 +1,32 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "target": "es5",
+    "target": "es2017",
     "lib": [
-      "es6",
       "es2017",
-      "dom",
-      "esnext.intl",
-      "es2017.intl",
-      "es2018.intl"
+      "esnext.asynciterable"
     ],
-    "baseUrl": ".",
-    "declaration": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "alwaysStrict": true,
+    "noImplicitReturns": true,
     "strict": true,
-    "resolveJsonModule": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "preserveConstEnums": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "allowSyntheticDefaultImports": true,
-    "noFallthroughCasesInSwitch": true,
-    "declarationMap": true,
-    "jsx": "react"
+    "declaration": true,
+    "skipLibCheck": false,
+    "strictNullChecks": true,
+    "noUnusedLocals": false,
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "pretty": true,
+    "sourceMap": true,
+    "outDir": "./dist"
   },
   "include": [
     "./e2e/**/*",
