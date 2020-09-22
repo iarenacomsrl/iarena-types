@@ -119,5 +119,11 @@ export const QUOTES_DECLINE = "decline";
 export const NOTIFICATIONS = "notifications";
 export const NOTIFICATIONS_READ = "read";
 
+// wallet
+export const WALLET = "wallet";
+export const WALLET_CHARGE = "charge";
+export const WALLET_BALANCE = "balance";
+export const API_URL = "https://iarena.azurewebsites.net/";
+
 export const CHATS = "chats";
 export const USERS = "USERS";

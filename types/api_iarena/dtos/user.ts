@@ -62,6 +62,8 @@ export interface IUser {
    */
   token?: string;
 
+  wallet_address?: string;
+
   /**
    * Name of the user
    */
