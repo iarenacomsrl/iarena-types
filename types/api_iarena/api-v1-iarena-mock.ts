@@ -1,6 +1,7 @@
 import {IAPIV1IArena} from "./api";
 import {commonRes} from "../mocks/common-res";
 import {
+  CreateSubscriptionParams,
   IB2BAnswerQuestionsReq,
   IB2BQuestionsReq,
   IChangePasswordReq,
@@ -11,7 +12,7 @@ import {
   ISignUpClientReq,
   ISignUpReq,
   IUserQuestionsReq,
-  IUsersPhotoUploadReq,
+  IUsersPhotoUploadReq, RetryInvoiceParams,
 } from "./requests";
 import {
   IAttachmentRes,
@@ -41,6 +42,7 @@ import {baseFieldsRes} from "../mocks/base-fields-res";
 import {dealsGetAllRes} from "../mocks/deals-get-all-res";
 import {b2bPartnersRes} from "../mocks/b2b-partners-res";
 import {IUser} from "./dtos/user";
+import {IInvoice} from "./dtos/customer";
 
 const API_MOCK_DELAY = 600;
 
@@ -165,5 +167,29 @@ export class ApiV1IarenaMock implements IAPIV1IArena {
 
   private delay<T>(data: any): Promise<T> {
     return new Promise(res => setTimeout(() => res(data), API_MOCK_DELAY));
+  }
+
+  async createPaymentIntent(id: string) {
+    return Promise.resolve();
+  }
+
+  createCustomer(): Promise<any> {
+    return Promise.resolve(null);
+  }
+
+  createSubscription(params: CreateSubscriptionParams): Promise<any> {
+    return Promise.resolve(null);
+  }
+
+  validateCoupon(coupon: string): Promise<any> {
+    return Promise.resolve(null);
+  }
+
+  retryInvoice(params: RetryInvoiceParams): Promise<IInvoice> {
+    return Promise.resolve(null);
+  }
+
+  async resendEmail(token: string): Promise<IValidateTokenRes> {
+    return this.delay(validateTokenRes(token));
   }
 }

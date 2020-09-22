@@ -2,7 +2,7 @@ import {ICompany} from "./dtos/dtos";
 import {signInFields} from "../enums/forms/sign-in";
 import {signUpFields} from "../enums/forms/sign-up";
 import {changePasswordFields} from "../enums/forms/change-password";
-import {ISection, IB2BPartnerInputField} from "./dtos/input-fields";
+import {IB2BPartnerInputField, ISection} from "./dtos/input-fields";
 import {UserRoles} from "./dtos/user";
 import {sqlId} from "../types";
 
@@ -88,4 +88,17 @@ export interface IB2BQuestionsReq {
 
 export interface IB2BAnswerQuestionsReq {
   sectionItems: IB2BPartnerInputField[];
+}
+
+export interface CreateSubscriptionParams {
+  paymentMethodId: string;
+  customerId: string;
+  priceId: string;
+  coupon: string;
+}
+
+export interface RetryInvoiceParams {
+  customerId: string;
+  paymentMethodId: string;
+  invoiceId: string;
 }

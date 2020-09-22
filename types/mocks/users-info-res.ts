@@ -27,6 +27,7 @@ export const usersInfoRes: IUsersInfoRes = {
       companies: null,
       balance: 0,
       role: UserRoles.Guest,
+      email_verified: true
     },
     {
       id: e2eUserId2,
@@ -40,6 +41,7 @@ export const usersInfoRes: IUsersInfoRes = {
       companies: null,
       location: "Milano",
       role: UserRoles.Guest,
+      email_verified: true
     },
     {
       id: e2eUserId3,
@@ -53,6 +55,7 @@ export const usersInfoRes: IUsersInfoRes = {
       companies: null,
       location: "Milano",
       role: UserRoles.Guest,
+      email_verified: true
     },
     {
       id: e2eDefaultUserId,
@@ -66,6 +69,7 @@ export const usersInfoRes: IUsersInfoRes = {
       location: "Milano",
       companies: null,
       role: UserRoles.Admin,
+      email_verified: true
     },
   ],
   ...commonRes,

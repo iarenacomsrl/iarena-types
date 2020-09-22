@@ -4,6 +4,7 @@ import {IDealInstance} from "../api_deals/dtos/deal";
 import {ICategoryFlat} from "./dtos/category";
 import {IUser} from "./dtos/user";
 import {ICoverHolderQuoteData} from "../api_deals/dtos/partners/cover-holder";
+import {Customer} from "./dtos/customer";
 
 /**
  * Basic common response of all responses
@@ -69,5 +70,9 @@ export interface IGetAutoQuoteRes extends ICommonRes, ICoverHolderQuoteData {
 }
 
 export interface IAttachmentRes {
-  json_strucuture: string
+  json_structure: string
+}
+
+export interface CreateCustomerResponse {
+  customer: Customer;
 }

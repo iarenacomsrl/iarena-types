@@ -1,7 +1,5 @@
 import {sqlId} from "../../types";
-import {ICategory, ICategoryFlat} from "./category";
-import {userFields} from "../../enums/forms/user-info";
-import {IDBInstance} from "../../api_deals/dtos/dtos";
+import {ICategoryFlat} from "./category";
 
 /**
  * Roles of users
@@ -120,4 +118,9 @@ export interface IUser {
    * Role, assigned to the user
    */
   role: UserRoles;
+
+  /**
+   * email_verified, return true if user have verified his email
+   */
+  email_verified: boolean;
 }

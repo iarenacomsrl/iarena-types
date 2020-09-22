@@ -9,8 +9,7 @@ import {
   ISignInReq,
   ISignUpClientReq,
   ISignUpReq,
-  IUserQuestionsReq,
-  IUsersPhotoUploadReq,
+  IUserQuestionsReq, CreateSubscriptionParams, RetryInvoiceParams,
 } from "./requests";
 import {
   Ib2bPartnersRes,
@@ -25,10 +24,15 @@ import {
   ISignUpRes,
   IUsersInfoRes,
   IValidateTokenRes, IGetAutoQuoteRes, IAttachmentRes,
+  CreateCustomerResponse,
 } from "./responses";
 import {AxiosInstance} from "axios";
 import {sqlId} from "../types";
 import {IUser} from "./dtos/user";
+import {
+  ICoupon, IInvoice,
+  Subscription,
+} from "./dtos/customer";
 
 export interface IAPIV1IArena {
   transport?: AxiosInstance;
@@ -128,4 +132,16 @@ export interface IAPIV1IArena {
    * Sending email to the user
    */
   sendEmail(data: ISendEmailReq): Promise<ICommonRes>;
+
+  createPaymentIntent(id: string): Promise<any>;
+
+  createCustomer(): Promise<CreateCustomerResponse>;
+
+  createSubscription(params: CreateSubscriptionParams): Promise<Subscription>;
+
+  validateCoupon(coupon: string): Promise<ICoupon>;
+
+  retryInvoice(params: RetryInvoiceParams): Promise<IInvoice>;
+
+  resendEmail(token: string): Promise<IValidateTokenRes>;
 }

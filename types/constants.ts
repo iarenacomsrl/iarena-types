@@ -75,6 +75,7 @@ export const emptyOwner: IUser = {
   companies: null,
   categories: [],
   role: UserRoles.Guest,
+  email_verified: true
 };
 
 export const RC_AUTO_CATEGORY_ID = 112;
