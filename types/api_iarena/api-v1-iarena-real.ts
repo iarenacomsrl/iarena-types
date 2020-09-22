@@ -2,6 +2,7 @@ import axios, {AxiosInstance, AxiosResponse} from "axios";
 import {IAPIV1IArena} from "./api";
 import {Headers} from "../enums/enums";
 import {
+  CreateSubscriptionParams,
   IB2BAnswerQuestionsReq,
   IB2BQuestionsReq,
   IChangePasswordReq,
@@ -13,8 +14,10 @@ import {
   ISignUpClientReq,
   ISignUpReq,
   IUserQuestionsReq,
+  RetryInvoiceParams,
 } from "./requests";
 import {
+  CreateCustomerResponse,
   IAttachmentRes,
   Ib2bPartnersRes,
   IB2BProductsRes,
@@ -33,6 +36,8 @@ import {
 import {sqlId} from "../types";
 import {encodeBearerToken} from "../utils";
 import {IUser} from "./dtos/user";
+import {ICoupon, IInvoice, Subscription} from "./dtos/customer";
+import {HttpParams} from "@angular/common/http";
 
 
 export class ApiV1IarenaReal implements IAPIV1IArena {
@@ -193,5 +198,38 @@ export class ApiV1IarenaReal implements IAPIV1IArena {
 
   sendEmail(data: ISendEmailReq): Promise<ICommonRes> {
     return this.transport.get("/sendGrid/send-email").then(ApiV1IarenaReal.parseResponse);
+  }
+
+  // resend confirmation email
+  resendEmail(token: string): Promise<IValidateTokenRes> {
+    return this.transport.post("/account/resend-email", {}, {headers: this.transport.defaults.headers[Headers.Authorization] = encodeBearerToken(token)}).then(ApiV1IarenaReal.parseResponse);
+  }
+
+  createPaymentIntent(id: string) {
+    return this.transport.post(`/stripe/${id}/create-payment-intent`, {})
+      .catch(ApiV1IarenaReal.parseResponse)
+      .then((r: any) => r.clientSecret);
+  }
+
+  createCustomer(): Promise<CreateCustomerResponse> {
+    return this.transport.post("/stripe/create-customer", {})
+      .catch(ApiV1IarenaReal.parseResponse) as unknown as Promise<CreateCustomerResponse>;
+  }
+
+  createSubscription(params: CreateSubscriptionParams): Promise<Subscription> {
+    return this.transport.post("/stripe/create-subscription", params)
+      .catch(ApiV1IarenaReal.parseResponse) as unknown as Promise<Subscription>;
+  }
+
+  validateCoupon(coupon: string): Promise<ICoupon> {
+    const params = new HttpParams().set("coupon", coupon);
+    return this.transport.post("/stripe/validate-coupon?" + params.toString()).then(ApiV1IarenaReal.parseResponse)
+      .catch(ApiV1IarenaReal.parseResponse);
+
+  }
+
+  retryInvoice(params: RetryInvoiceParams): Promise<IInvoice> {
+    return this.transport.post("/stripe/retry-invoice", params)
+      .catch(ApiV1IarenaReal.parseResponse);
   }
 }

@@ -18,13 +18,6 @@ export const negotiationGenerateDealForm: IB2BQuestionFieldsRes = {
             },
             {
               isRequired: false,
-              typology: InputTypes.Int,
-              displayType: DisplayTypes.Default,
-              id: 7,
-              label: "Genere",
-            },
-            {
-              isRequired: false,
               typology: InputTypes.Boolean,
               displayType: DisplayTypes.Default,
               id: 8,
@@ -32,18 +25,11 @@ export const negotiationGenerateDealForm: IB2BQuestionFieldsRes = {
             },
             {
               isRequired: true,
-              typology: InputTypes.String,
-              displayType: DisplayTypes.TextArea,
+              typology: InputTypes.File,
+              displayType: DisplayTypes.Default,
               id: 9,
-              label: "Copertura",
-            },
-            {
-              isRequired: true,
-              typology: InputTypes.Date,
-              displayType: DisplayTypes.ExpireDate,
-              id: 210,
-              label: "Data di scandenza",
-            },
+              label: "Allegato",
+            }
           ],
         },
       ],

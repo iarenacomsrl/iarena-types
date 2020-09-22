@@ -10,7 +10,7 @@ export const quotesGetAllRes: IQuotesRes = {
       id: 1,
       dealId: 1,
       ownerId: e2eUserId1,
-      status: QuoteStatuses.Default,
+      status: QuoteStatuses.Accepted,
       price: 120,
       company: companiesRes.data![0]!,
       commissionPercentage: 1,

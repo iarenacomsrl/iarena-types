@@ -18,6 +18,7 @@ export const signInRes: ISignInRes = {
     companies: null,
     token: "JWT string",
     role: UserRoles.Guest,
+    email_verified: true
   },
   ...commonRes,
 };

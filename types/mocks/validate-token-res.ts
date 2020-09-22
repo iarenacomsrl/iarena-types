@@ -19,6 +19,7 @@ export function validateTokenRes(tokenLikeId: string): IValidateTokenRes {
         companies: null,
         categories: [],
         role: UserRoles.Guest,
+        email_verified: true
       },
     },
     ...commonRes,

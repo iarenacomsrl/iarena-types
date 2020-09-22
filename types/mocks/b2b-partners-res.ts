@@ -8,7 +8,7 @@ export const b2bPartnersRes: Ib2bPartnersRes = {
       id: COVER_HOLDER_ID,
       questionsCount: 10,
       logo: "https://cdnarena.blob.core.windows.net/images/2546.png",
-      name: "ChoverHolder",
+      name: "CoverHolder",
     },
     {
       id: 4,

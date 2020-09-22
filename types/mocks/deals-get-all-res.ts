@@ -68,7 +68,7 @@ export const dealsGetAllRes: IDealsRes = {
         },
       ],
       id: 1,
-      expireDate: new Date(),
+      expireDate: new Date(Date.now() + ( 3600 * 1000 * 24)),
     },
     {
       quoteStatus: DealQuoteStatuses.Default,
@@ -130,7 +130,7 @@ export const dealsGetAllRes: IDealsRes = {
         },
       ],
       id: 1,
-      expireDate: new Date(),
+      expireDate: new Date(Date.now() + ( 3600 * 1000 * 24)),
     },
     {
       quoteStatus: DealQuoteStatuses.Default,
@@ -192,7 +192,7 @@ export const dealsGetAllRes: IDealsRes = {
         },
       ],
       id: 1,
-      expireDate: new Date(),
+      expireDate: new Date(Date.now() + ( 3600 * 1000 * 24)),
     },
     {
       quoteStatus: DealQuoteStatuses.Default,
@@ -254,7 +254,7 @@ export const dealsGetAllRes: IDealsRes = {
         },
       ],
       id: 1,
-      expireDate: new Date(),
+      expireDate: new Date(Date.now() + ( 3600 * 1000 * 24)),
     },
     {
       quoteStatus: DealQuoteStatuses.Default,
@@ -337,7 +337,7 @@ export const dealsGetAllRes: IDealsRes = {
         },
       ],
       id: 1,
-      expireDate: new Date(),
+      expireDate: new Date(Date.now() + ( 3600 * 1000 * 24)),
     },
     {
       quoteStatus: DealQuoteStatuses.Default,
@@ -399,7 +399,7 @@ export const dealsGetAllRes: IDealsRes = {
         },
       ],
       id: 1,
-      expireDate: new Date(),
+      expireDate: new Date(Date.now() + ( 3600 * 1000 * 24)),
     },
     {
       quoteStatus: DealQuoteStatuses.Default,
@@ -461,7 +461,7 @@ export const dealsGetAllRes: IDealsRes = {
         },
       ],
       id: 1,
-      expireDate: new Date(),
+      expireDate: new Date(Date.now() + ( 3600 * 1000 * 24)),
     },
   ],
   ...commonRes,
